@@ -1,0 +1,171 @@
+{
+	"Hello world": {
+		"prefix": "helloworld",
+		"body": [
+			"#include <iostream>",
+			"",
+			"int main() {",
+			"\tstd::cout << \"Hello, world!\" << std::endl;",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Hello world program",
+		"isFileTemplate": true
+	},
+	"#pragma once": {
+		"prefix": "#po",
+		"body": [
+			"#pragma once"
+		],
+		"description": "#pragma once",
+		"isFileTemplate": true
+	},
+	"Print line in c++ style": {
+		"prefix": "println",
+		"body": "std::cout << ${1:Expression} << std::endl;",
+		"description": "Print line in c++ style"
+	},
+	"Index snippet": {
+		"prefix": "for",
+		"body": [
+			"for (${1:size_t} ${2:i} = ${3:0}; ${2:i} < ${4:length}; ++${2:i}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Index for snippet"
+	},
+	"Index reverse for snippet": {
+		"prefix": "forr",
+		"body": [
+			"for (${1:int} ${2:i} = ${3:length} - 1; ${2:i} >= ${4:0}; --${2:i}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Index reverse for snippet"
+	},
+	"Range-based for snippet": {
+		"prefix": "rfor",
+		"body": [
+			"for (${1|auto&,auto,auto&&|} ${2:var} : ${3:collection_to_loop}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Range-based for snippet"
+	},
+	"if constexpr snippet": {
+		"prefix": "cif",
+		"body": [
+			"if constexpr (${condition}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "if constexpr snippet"
+	},
+	"enum snippet": {
+		"prefix": "enum",
+		"body": [
+			"enum ${1:NewEnum} {",
+			"\t$0",
+			"};"
+		],
+		"description": "Enum snippet"
+	},
+	"enum class snippet": {
+		"prefix": "enum class",
+		"body": [
+			"enum class ${1:NewEnumClass} {",
+			"\t$0",
+			"};"
+		],
+		"description": "enum class snippet"
+	},
+	"class snippet": {
+		"prefix": "class",
+		"body": [
+			"class ${NewClass} {",
+			"public:",
+			"\t${NewClass}();",
+			"\t${NewClass}(${NewClass}&&) = default;",
+			"\t${NewClass}(const ${NewClass}&) = default;",
+			"\t${NewClass}& operator=(${NewClass}&&) = default;",
+			"\t${NewClass}& operator=(const ${NewClass}&) = default;",
+			"\t~${NewClass}();",
+			"",
+			"private:",
+			"\t$0",
+			"};",
+			"",
+			"${NewClass}::${NewClass}() {",
+			"\t",
+			"}",
+			"",
+			"${NewClass}::~${NewClass}() {",
+			"\t",
+			"}"
+		],
+		"description": "class snippet"
+	},
+	"#ifdef snippet": {
+		"prefix": "#ifdef",
+		"body": [
+			"#ifdef ${var}",
+			"$0",
+			"#endif // ${var}"
+		],
+		"description": "#ifdef snippet"
+	},
+	"#ifndef snippet": {
+		"prefix": "#ifndef",
+		"body": [
+			"#ifndef ${var}",
+			"$0",
+			"#endif // !${var}"
+		],
+		"description": "#ifndef snippet"
+	},
+	"struct snippet": {
+		"prefix": "struct",
+		"body": [
+			"struct ${NewStruct} {",
+			"\t$0",
+			"};"
+		],
+		"description": "struct snippet"
+	},
+	"switch snippet": {
+		"prefix": "switch",
+		"body": [
+			"switch (${switch_on}) {",
+			"\t$0",
+			"\tdefault:",
+			"\t\tbreak;",
+			"}"
+		],
+		"description": "switch snippet"
+	},
+	"union snippet": {
+		"prefix": "union",
+		"body": [
+			"union ${NewUnion} {",
+			"\t$0",
+			"};"
+		],
+		"description": "union snippet"
+	},
+	"main snippet": {
+		"prefix": "main",
+		"body": [
+			"int main(${1:int argc, char* argv[]}) {",
+			"\t$0",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "main function"
+	},
+    "snip1": {
+		"prefix": "lua",
+		"body": [
+			"lualualua"
+		]
+	}
+}

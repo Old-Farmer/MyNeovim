@@ -1,0 +1,107 @@
+{
+	"Hello world": {
+		"prefix": "helloworld",
+		"body": [
+			"#include <stdio.h>",
+			"",
+			"int main(int argc, char* argv[]) {",
+			"\tprintf(\"Hello, world!\");",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Hello world program",
+		"isFileTemplate": true
+	},
+	"#pragma once": {
+		"prefix": "#po",
+		"body": [
+			"#pragma once"
+		],
+		"description": "#pragma once",
+		"isFileTemplate": true
+	},
+	"Index for snippet": {
+		"prefix": "for",
+		"body": [
+			"for (${1:size_t} ${2:i} = ${3:0}; ${2:i} < ${4:length}; ++${2:i}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Index for snippet"
+	},
+	"Index reverse for snippet": {
+		"prefix": "forr",
+		"body": [
+			"for (${1:int} ${2:i} = ${3:length} - 1; ${2:i} >= ${4:0}; --${2:i}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Index reverse for snippet"
+	},
+	"enum snippet": {
+		"prefix": "enum",
+		"body": [
+			"enum ${1:NewEnum} {",
+			"\t$0",
+			"};"
+		],
+		"description": "Enum snippet"
+	},
+	"#ifdef snippet": {
+		"prefix": "#ifdef",
+		"body": [
+			"#ifdef ${var}",
+			"$0",
+			"#endif // ${var}"
+		],
+		"description": "#ifdef snippet"
+	},
+	"#ifndef snippet": {
+		"prefix": "#ifndef",
+		"body": [
+			"#ifndef ${var}",
+			"$0",
+			"#endif // !${var}"
+		],
+		"description": "#ifndef snippet"
+	},
+	"struct snippet": {
+		"prefix": "struct",
+		"body": [
+			"struct ${NewStruct} {",
+			"\t$0",
+			"};"
+		],
+		"description": "struct snippet"
+	},
+	"switch snippet": {
+		"prefix": "switch",
+		"body": [
+			"switch (${switch_on}) {",
+			"\t$0",
+			"\tdefault:",
+			"\t\tbreak;",
+			"}"
+		],
+		"description": "switch snippet"
+	},
+	"union snippet": {
+		"prefix": "union",
+		"body": [
+			"union ${NewUnion} {",
+			"\t$0",
+			"};"
+		],
+		"description": "union snippet"
+	},
+	"main snippet": {
+		"prefix": "main",
+		"body": [
+			"int main(${1:int argc, char* argv[]}) {",
+			"\t$0",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "main function"
+	}
+}

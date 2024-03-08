@@ -1,0 +1,19 @@
+{
+    "nvim-dap launch": {
+        "prefix": "launch",
+        "body": [
+            "{",
+            "\t\"version\": \"0.2.0\"",
+            "\t\"configurations\": [",
+            "\t\t{",
+            "\t\t\t\"type\": \"${1:codelldb}\",",
+            "\t\t\t\"request\": \"${2:launch}\",",
+            "\t\t\t\"name\": \"${3:launch 1}\",",
+            "\t\t\t\"program\": \"{4:program}\",",
+            "\t\t\t\"args\": \"[${0}]\",",
+            "\t\t}",
+            "\t]",
+            "}"
+        ]
+    }
+}

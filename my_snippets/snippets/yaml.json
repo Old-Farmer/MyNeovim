@@ -1,0 +1,28 @@
+{
+	".clang-format template": {
+		"prefix": "clangformat",
+		"body": [
+			"BasedOnStyle: Google",
+			"IndentWidth: 4",
+			"DerivePointerAlignment: false"
+		],
+		"description": ".clang-format template",
+		"isFileTemplate": true
+	},
+	".clang-tidy template": {
+		"prefix": "clangtidy",
+		"body": [
+			"FormatStyle: google"
+		],
+		"description": ".clang-tidy template",
+		"isFileTemplate": true
+	},
+	".clangd suppress builtin_definition": {
+		"prefix": "supb",
+		"body": [
+			"Diagnostics:",
+    		"\tSuppress: 'builtin_definition'"
+		],
+		"description": ".clangd suppress builtin_definition"
+	}
+}
