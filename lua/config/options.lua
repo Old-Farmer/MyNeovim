@@ -11,3 +11,9 @@ local opt = vim.opt
 
 opt.scrolloff = 8
 my_lib.set_indentation("", "spaces", 4)
+
+-- User commands
+local command = vim.api.nvim_create_user_command
+
+-- Set pwd to Current file dir
+command("CdCurrentFileDir", "cd %:p:h", {})
