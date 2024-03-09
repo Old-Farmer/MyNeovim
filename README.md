@@ -1,4 +1,4 @@
-# 💤 MyLazyVim
+# MyNeovim
 
 [LazyVim](https://github.com/LazyVim/LazyVim) customized by Old-Farmer
 
