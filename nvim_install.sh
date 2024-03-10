@@ -7,10 +7,9 @@
 #rm -f nvim-linux64.tar.gz
 
 function install_nvim_by_appimage() {
-    # mkdir -p "$HOME/.local/bin"
-    # cd "$HOME/.local/bin" # will not influence outside
-    cd /usr/local/bin
-    sudo curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    mkdir -p "$HOME/.local/bin"
+    cd "$HOME/.local/bin" # will not influence outside
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
     chmod u+x nvim.appimage
     mv nvim.appimage nvim
 }
@@ -21,10 +20,9 @@ function install_nvim_by_binary() {
     mv nvim-linux64 mv-linux64-prev
     tar -xzvf nvim-linux64.tar.gz
     rm nvim-linux64.tar.gz
-    # mkdir -p "$HOME/.local/bin"
-    # cd "$HOME/.local/bin"
-    cd /usr/local/bin
-    sudo ln -sf "$HOME/nvim-linux64/bin/nvim" nvim
+    mkdir -p "$HOME/.local/bin"
+    cd "$HOME/.local/bin"
+    ln -sf "$HOME/nvim-linux64/bin/nvim" nvim
 }
 
 latest_version_info_link=https://api.github.com/repos/neovim/neovim/releases/latest

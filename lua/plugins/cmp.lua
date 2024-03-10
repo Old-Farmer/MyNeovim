@@ -31,14 +31,22 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
+      -- Don't preselect ,ref https://github.com/hrsh7th/nvim-cmp/discussions/1411
+      opts.preselect = cmp.PreselectMode.None -- need to be set for some cmp plugins
+      opts.completion = {
+        completeopt = "menu,menuone,preview,noinsert,noselect", -- noselect is necessary
+      }
+
+      -- Toggle docs view -- BUG here
+      opts.mapping["<C-g>"] = cmp.mapping(function()
+        if cmp.visible_docs() then
+          cmp.close_docs()
+        else
+          cmp.open_docs()
+        end
+      end, { "i", "s" })
+
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        -- -- Select behavior
-        -- ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-        -- ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-        -- ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-        -- ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-        -- -- Close doc
-        -- ["<C-d>"] = cmp.mapping(cmp.mapping.close_docs(), { "i", "s" }),
         -- Supertab
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

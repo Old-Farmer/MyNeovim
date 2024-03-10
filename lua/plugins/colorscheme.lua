@@ -9,6 +9,9 @@ return {
   {
     "catppuccin/nvim",
     priority = 1000,
+    dim_inactive = {
+      enabled = true,
+    },
     -- name = "catppuccin",
     -- opts = {
     --   flavour = "latte", -- latte, frappe, macchiato, mocha
