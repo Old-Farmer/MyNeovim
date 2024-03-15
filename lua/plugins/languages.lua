@@ -1,4 +1,5 @@
 return {
+  -- C/C++
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -24,7 +25,7 @@ return {
             "--query-driver=/usr/bin/cc,/usr/bin/c++,/usr/bin/gcc,/usr/bin/g++,/usr/bin/gcc-12,/usr/bin/g++-12,/usr/bin/gcc-13,/usr/bin/g++-13,/usr/bin/clang,/usr/bin/clang++",
             "--pretty",
             "--log=info",
-            "--completion-style=detailed",
+            -- "--completion-style=detailed",
             "--background-index",
             "--clang-tidy",
           }
@@ -32,10 +33,9 @@ return {
       },
     },
   },
+  -- CMake
   {
-    "mfussenegger/nvim-dap",
-    opts = function ()
-      require('dap.ext.vscode').load_launchjs(".nvim/launch.json", { codelldb = {'c', 'cpp'} })
-    end
+    "Civitasv/cmake-tools.nvim",
+    enabled = false,
   },
 }

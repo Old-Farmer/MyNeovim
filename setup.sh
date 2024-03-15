@@ -14,7 +14,10 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 install lazygit $HOME/.local/bin
 
-# node is optional but neccessary for some lsp server like pyright
+# node is optional but neccessary for some lsp servers like pyright
 # Install node use nvm https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 # nvm install --reinstall-packages-from=node --latest-npm node
+
+# python3 and pip3 is also needed for some lsp servers
+# Linux distributions always install them

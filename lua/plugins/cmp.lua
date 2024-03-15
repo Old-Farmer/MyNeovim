@@ -1,18 +1,21 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        -- Set user snippets loc
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load({
-            paths = { "~/.config/nvim/my_snippets", "~/.config/nvim" },
-            default_priority = 2000, -- Make user-defined snippets high priority
-          })
-        end,
-      },
-    },
+    -- dependencies = {
+    --   {
+    --     "rafamadriz/friendly-snippets",
+    --     -- Set user snippets loc
+    --     config = function()
+    --       require("luasnip.loaders.from_vscode").lazy_load({
+    --         default_priority = 2000, -- Make user-defined snippets high priority
+    --       })
+    --       -- require("luasnip.loaders.from_vscode").load_standalone({
+    --       --   paths = { "~/.config/nvim/my_snippets" },
+    --       --   -- default_priority = 2000, -- Make user-defined snippets high priority
+    --       -- })
+    --     end,
+    --   },
+    -- },
     -- disable luasnip tab behavior
     keys = function()
       return {}
@@ -37,7 +40,7 @@ return {
         completeopt = "menu,menuone,preview,noinsert,noselect", -- noselect is necessary
       }
 
-      -- Toggle docs view -- BUG here
+      -- Toggle docs view
       opts.mapping["<C-g>"] = cmp.mapping(function()
         if cmp.visible_docs() then
           cmp.close_docs()
@@ -45,6 +48,12 @@ return {
           cmp.open_docs()
         end
       end, { "i", "s" })
+
+      -- -- Border settng
+      -- opts.window = {
+      --   completion = cmp.config.window.bordered(),
+      --   documentation = cmp.config.window.bordered(),
+      -- }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         -- Supertab

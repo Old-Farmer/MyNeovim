@@ -1,6 +1,6 @@
 return {
   {
-    "Civitasv/cmake-tools.nvim",
+    "dstein64/vim-startuptime",
     enabled = false,
   },
 }

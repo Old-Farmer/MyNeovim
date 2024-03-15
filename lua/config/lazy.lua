@@ -43,4 +43,8 @@ require("lazy").setup({
       },
     },
   },
+  -- Terminal border
+  ui = {
+    border = "rounded",
+  },
 })
