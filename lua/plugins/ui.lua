@@ -4,11 +4,11 @@ return {
     keys = {
       { "<leader>bc", "<Cmd>BufferlinePick<CR>", desc = "Choose(Pick) a Buffer" },
     },
-    opts = {
-      options = {
-        always_show_bufferline = true,
-      },
-    },
+    -- opts = {
+    --   options = {
+    --     always_show_bufferline = true,
+    --   },
+    -- },
   },
   {
     "nvim-lualine/lualine.nvim",

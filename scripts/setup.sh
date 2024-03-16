@@ -16,8 +16,17 @@ install lazygit $HOME/.local/bin
 
 # node is optional but neccessary for some lsp servers like pyright
 # Install node use nvm https://github.com/nvm-sh/nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-# nvm install --reinstall-packages-from=node --latest-npm node
+# e.g. nvm v0.39.7
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# install node
+# nvm install --reinstall-packages-from=node node # latest version of node
+# nvm install --reinstall-packages-from=current --lts # recommend, latest version of lts
+# use node
+# nvm use node
+# nvm use --lts
 
 # python3 and pip3 is also needed for some lsp servers
 # Linux distributions always install them
+
+# cargo maybe needed by mason.nvim too
+# curl https://sh.rustup.rs -sSf | sh
