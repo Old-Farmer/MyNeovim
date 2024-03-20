@@ -1,26 +1,23 @@
+local Util = require("lazyvim.util")
+
 return {
   {
     "akinsho/bufferline.nvim",
     keys = {
       { "<leader>bc", "<Cmd>BufferLinePick<CR>", desc = "Choose(Pick) a Buffer" },
     },
-    -- opts = {
-    --   options = {
-    --     always_show_bufferline = true,
-    --   },
-    -- },
   },
   {
     "nvim-lualine/lualine.nvim",
-    opts = {
-      sections = {
-        lualine_z = {
-          function()
-            return " " .. os.date("%I:%M %p")
-          end,
-        },
-      },
-    },
+    opts = function(_, opts)
+      -- local len = #opts.sections.lualine_c
+      -- opts.sections.lualine_c[len - 1] = { Util.lualine.pretty_path({ modified_sign = "[󰐕]" }) }
+      opts.sections.lualine_z = {
+        function()
+          return " " .. os.date("%I:%M %p")
+        end,
+      }
+    end,
   },
   {
     "nvimdev/dashboard-nvim",
