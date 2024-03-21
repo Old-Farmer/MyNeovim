@@ -34,11 +34,11 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
-      -- Don't preselect ,ref https://github.com/hrsh7th/nvim-cmp/discussions/1411
-      opts.preselect = cmp.PreselectMode.None -- need to be set for some cmp plugins
-      opts.completion = {
-        completeopt = "menu,menuone,preview,noinsert,noselect", -- noselect is necessary
-      }
+      -- -- Don't preselect ,ref https://github.com/hrsh7th/nvim-cmp/discussions/1411
+      -- opts.preselect = cmp.PreselectMode.None -- need to be set for some cmp plugins
+      -- opts.completion = {
+      --   completeopt = "menu,menuone,preview,noinsert,noselect", -- noselect is necessary
+      -- }
 
       -- Toggle docs view
       opts.mapping["<C-g>"] = cmp.mapping(function()
@@ -54,13 +54,14 @@ return {
       --   completion = cmp.config.window.bordered(),
       --   documentation = cmp.config.window.bordered(),
       -- }
+      --
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         -- Supertab
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
-            cmp.select_next_item()
+            cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
             -- cmp.confirm({ select = true })
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
             -- this way you will only jump inside the snippet region
@@ -74,7 +75,7 @@ return {
         end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            cmp.select_prev_item()
+            cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
           elseif luasnip.jumpable(-1) then
             luasnip.jump(-1)
           else
