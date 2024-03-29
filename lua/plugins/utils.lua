@@ -3,13 +3,14 @@ return {
     "dstein64/vim-startuptime",
     enabled = false,
   },
+
   -- Bookmarks
   {
     "LintaoAmons/bookmarks.nvim",
     dependencies = {
       { "stevearc/dressing.nvim" }, -- optional: to have the same UI shown in the GIF
     },
-    event = "BufEnter",
+    event = "VeryLazy",
     keys = {
       {
         "<leader>mm",
@@ -24,6 +25,17 @@ return {
         mode = { "n", "v" },
       },
       { "<leader>mc", "<cmd>BookmarksCommands<cr>", desc = "Find and trigger a bookmark command", mode = { "n", "v" } },
+    },
+    opts = {
+      json_db_path = vim.fs.normalize(vim.fn.stdpath("data") .. "/bookmarks.db.json"), -- Store in data path
+    },
+  },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      defaults = {
+        ["<leader>m"] = { name = "+bookmark" },
+      },
     },
   },
 }
