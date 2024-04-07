@@ -16,10 +16,22 @@ return {
     --     end,
     --   },
     -- },
-    -- disable luasnip tab behavior
+    -- -- disable luasnip tab behavior
+    -- keys = function()
+    --   return {}
+    -- https://github.com/LazyVim/LazyVim/discussions/2781
     keys = function()
-      return {}
-    end,
+      -- stylua: ignore
+      return {
+        { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
+          expr = true,
+          silent = true,
+          mode = "i",
+        },
+        { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
+        { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
+      }
+    end, -- end,
   },
   {
     "hrsh7th/nvim-cmp",

@@ -17,7 +17,7 @@ function install_nvim_by_appimage() {
 function install_nvim_by_binary() {
     cd "$HOME"
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-    mv nvim-linux64 mv-linux64-prev
+    mv nvim-linux64 nvim-linux64-prev
     tar -xzvf nvim-linux64.tar.gz
     rm nvim-linux64.tar.gz
     mkdir -p "$HOME/.local/bin"
