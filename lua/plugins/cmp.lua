@@ -16,22 +16,23 @@ return {
     --     end,
     --   },
     -- },
-    -- -- disable luasnip tab behavior
-    -- keys = function()
-    --   return {}
-    -- https://github.com/LazyVim/LazyVim/discussions/2781
+    -- disable luasnip tab behavior
     keys = function()
-      -- stylua: ignore
-      return {
-        { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
-          expr = true,
-          silent = true,
-          mode = "i",
-        },
-        { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
-        { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
-      }
-    end, -- end,
+      return {}
+    end,
+    -- -- https://github.com/LazyVim/LazyVim/discussions/2781
+    -- keys = function()
+    --   -- stylua: ignore
+    --   return {
+    --     { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
+    --       expr = true,
+    --       silent = true,
+    --       mode = "i",
+    --     },
+    --     { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
+    --     { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
+    --   }
+    -- end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -77,7 +78,7 @@ return {
             -- cmp.confirm({ select = true })
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
             -- this way you will only jump inside the snippet region
-          elseif luasnip.expand_or_jumpable() then
+          elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
             cmp.complete()

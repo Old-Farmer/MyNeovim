@@ -3,7 +3,8 @@
 cd $HOME
 
 # nvim install
-./nvim_install.sh
+# ./nvim_install.sh
+sudo snap install --beta nvim --classic # stable
 
 # LazyVim dependencies
 sudo apt-get install ripgrep fd-find
