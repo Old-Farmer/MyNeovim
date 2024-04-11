@@ -8,11 +8,12 @@ return {
   },
   {
     "catppuccin/nvim",
+    lazy = true,
     priority = 1000,
     dim_inactive = {
       enabled = true,
     },
-    -- name = "catppuccin",
+    name = "catppuccin",
     -- opts = {
     --   flavour = "latte", -- latte, frappe, macchiato, mocha
     --   background = { -- :h background

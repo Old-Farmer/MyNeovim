@@ -6,6 +6,8 @@ local my_lib = require("my_lib")
 
 -- Disable lsp autoformat
 vim.g.autoformat = false
+-- Set python lsp
+vim.g.lazyvim_python_lsp = "pyright"
 
 local opt = vim.opt
 
