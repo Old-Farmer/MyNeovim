@@ -1,39 +1,47 @@
 return {
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   -- dependencies = {
-  --   --   {
-  --   --     "rafamadriz/friendly-snippets",
-  --   --     -- Set user snippets loc
-  --   --     config = function()
-  --   --       require("luasnip.loaders.from_vscode").lazy_load({
-  --   --         default_priority = 2000, -- Make user-defined snippets high priority
-  --   --       })
-  --   --       -- require("luasnip.loaders.from_vscode").load_standalone({
-  --   --       --   paths = { "~/.config/nvim/my_snippets" },
-  --   --       --   -- default_priority = 2000, -- Make user-defined snippets high priority
-  --   --       -- })
-  --   --     end,
-  --   --   },
-  --   -- },
-  --   -- disable luasnip tab behavior
-  --   keys = function()
-  --     return {}
-  --   end,
-  --   -- -- https://github.com/LazyVim/LazyVim/discussions/2781
-  --   -- keys = function()
-  --   --   -- stylua: ignore
-  --   --   return {
-  --   --     { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
-  --   --       expr = true,
-  --   --       silent = true,
-  --   --       mode = "i",
-  --   --     },
-  --   --     { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
-  --   --     { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
-  --   --   }
-  --   -- end,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    -- dependencies = {
+    --   {
+    --     "rafamadriz/friendly-snippets",
+    --     -- Set user snippets loc
+    --     config = function()
+    --       require("luasnip.loaders.from_vscode").lazy_load({
+    --         default_priority = 2000, -- Make user-defined snippets high priority
+    --       })
+    --       -- require("luasnip.loaders.from_vscode").load_standalone({
+    --       --   paths = { "~/.config/nvim/my_snippets" },
+    --       --   -- default_priority = 2000, -- Make user-defined snippets high priority
+    --       -- })
+    --     end,
+    --   },
+    -- },
+    -- -- disable luasnip tab behavior
+    -- keys = function()
+    --   return {}
+    -- end,
+    -- -- https://github.com/LazyVim/LazyVim/discussions/2781
+    -- keys = function()
+    --   -- stylua: ignore
+    --   return {
+    --     { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
+    --       expr = true,
+    --       silent = true,
+    --       mode = "i",
+    --     },
+    --     { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
+    --     { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
+    --   }
+    -- end,
+    --
+    -- -- disable annoying cursor jump
+    -- -- ref https://github.com/LazyVim/LazyVim/discussions/1985
+    -- opts = {
+    --   history = true,
+    --   region_check_events = "InsertEnter",
+    --   delete_check_events = "TextChanged",
+    -- },
+  },
   -- {
   --   "hrsh7th/nvim-cmp",
   --   ---@param opts cmp.ConfigSchema
@@ -104,6 +112,9 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
 
+      -- Disable ghost text
+      opts.experimental.ghost_text = false
+
       -- Toggle docs view
       opts.mapping["<C-g>"] = cmp.mapping(function()
         if cmp.visible_docs() then
@@ -122,6 +133,22 @@ return {
       end, { "i", "s" })
 
       opts.mapping["<C-p>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+        else
+          fallback()
+        end
+      end, { "i", "s" })
+
+      opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+        else
+          fallback()
+        end
+      end, { "i", "s" })
+
+      opts.mapping["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
         else
