@@ -1,5 +1,3 @@
-local Util = require("lazyvim.util")
-
 return {
   {
     "akinsho/bufferline.nvim",
@@ -53,6 +51,22 @@ return {
       -- },
       presets = {
         lsp_doc_border = true,
+      },
+    },
+  },
+  -- goto-preview
+  {
+    "rmagatti/goto-preview",
+    event = "BufEnter",
+    opts = {
+      default_mappings = true,
+    },
+  },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      defaults = {
+        ["gp"] = { name = "+goto-preview" },
       },
     },
   },
