@@ -1,6 +1,7 @@
 return {
   {
     "L3MON4D3/LuaSnip",
+    version = "v2.*",
     -- dependencies = {
     --   {
     --     "rafamadriz/friendly-snippets",
@@ -21,18 +22,18 @@ return {
     --   return {}
     -- end,
     -- -- https://github.com/LazyVim/LazyVim/discussions/2781
-    -- keys = function()
-    --   -- stylua: ignore
-    --   return {
-    --     { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
-    --       expr = true,
-    --       silent = true,
-    --       mode = "i",
-    --     },
-    --     { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
-    --     { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
-    --   }
-    -- end,
+    keys = function()
+      -- stylua: ignore
+      return {
+        { "<C-j>", function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<C-j>" end,
+          expr = true,
+          silent = true,
+          mode = "i",
+        },
+        { "<C-j>", function() require("luasnip").jump(1) end, mode = "s", },
+        { "<C-l>", function() require("luasnip").jump(-1) end, mode = { "i", "s" }, },
+      }
+    end,
     --
     -- -- disable annoying cursor jump
     -- -- ref https://github.com/LazyVim/LazyVim/discussions/1985

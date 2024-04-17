@@ -1,13 +1,13 @@
 {
-	"c/c++  warning": {
-		"prefix": "cwarn",
-		"body":[
-			"if(CMAKE_CXX_COMPILER_ID MATCHES \"GNU|Clang\")",
-			"\tadd_compile_options(-Wall -Wextra)",
-			"elseif(CMAKE_CXX_COMPILER_ID STREQUAL \"MSVC\")",
-			"\tadd_compile_options(/W4)",
-			"endif()"
-		],
-		"description": "c/c++  warning"
-	}
+    "c/c++  warning": {
+        "prefix": "cwarn",
+        "body": [
+            "if(CMAKE_CXX_COMPILER_ID MATCHES \"GNU|Clang\")",
+            "\tadd_compile_options(-Wall -Wextra)",
+            "elseif(CMAKE_CXX_COMPILER_ID STREQUAL \"MSVC\")",
+            "\tadd_compile_options(/W4)",
+            "endif()"
+        ],
+        "description": "c/c++  warning"
+    }
 }
