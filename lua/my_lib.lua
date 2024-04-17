@@ -22,7 +22,7 @@ function my_lib.set_indentation(scope, style, n)
     opt.softtabstop = -1
     opt.smarttab = true
   else -- mixed
-    vim.cmd [[ set tabstop& ]]
+    vim.cmd([[ set tabstop& ]])
     opt.expandtab = false
     opt.shiftwidth = n
     opt.softtabstop = -1

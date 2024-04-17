@@ -1,12 +1,23 @@
 {
-	".clang-format template": {
-		"prefix": "clangformat",
+	".clang-format template for C++": {
+		"prefix": "clangformat-cpp",
 		"body": [
 			"BasedOnStyle: Google",
 			"IndentWidth: 4",
 			"DerivePointerAlignment: false"
 		],
 		"description": ".clang-format template",
+		"isFileTemplate": true
+	},
+	".clang-format template for C": {
+		"prefix": "clangformat-c",
+		"body": [
+			"BasedOnStyle: Google",
+			"IndentWidth: 4",
+			"DerivePointerAlignment: false",
+            "PointerAlignment: Right"
+		],
+		"description": ".clang-format template for C",
 		"isFileTemplate": true
 	},
 	".clang-tidy template": {
