@@ -42,6 +42,7 @@ return {
   -- markdown
   {
     "mfussenegger/nvim-lint",
+    optional = true,
     opts = {
       linters = {
         markdownlint = {
@@ -49,5 +50,10 @@ return {
         },
       },
     },
+  },
+  {
+    "lukas-reineke/headlines.nvim",
+    optional = true,
+    enabled = false,
   },
 }
