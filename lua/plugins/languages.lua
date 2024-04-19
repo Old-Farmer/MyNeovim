@@ -38,4 +38,16 @@ return {
     "Civitasv/cmake-tools.nvim",
     enabled = false,
   },
+
+  -- markdown
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters = {
+        markdownlint = {
+          args = { "--disable", "MD013", "--" },
+        },
+      },
+    },
+  },
 }

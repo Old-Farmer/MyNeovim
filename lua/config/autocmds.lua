@@ -10,3 +10,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     my_lib.set_indentation("local", "spaces", 2)
   end,
 })
+
+-- disable spell for markdown
+-- ref https://github.com/LazyVim/LazyVim/discussions/1470
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
