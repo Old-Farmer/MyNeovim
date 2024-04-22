@@ -6,8 +6,7 @@ return {
       setup = {
         clangd = function(_, opts)
           opts.root_dir = function(fname)
-            return require("lspconfig.util").find_git_ancestor(fname)
-              or require("lspconfig.util").root_pattern(".clangd", ".clang-tidy", ".clang-format")(fname)
+            return require("lspconfig.util").root_pattern(".clangd", ".clang-tidy", ".clang-format")(fname)
               or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(fname)
               or require("lspconfig.util").root_pattern(
                 "Makefile",
@@ -18,6 +17,7 @@ return {
                 "meson_options.txt",
                 "build.ninja"
               )(fname)
+              or require("lspconfig.util").find_git_ancestor(fname)
           end
           opts.cmd = {
             "clangd",
@@ -33,6 +33,7 @@ return {
       },
     },
   },
+
   -- CMake
   {
     "Civitasv/cmake-tools.nvim",
