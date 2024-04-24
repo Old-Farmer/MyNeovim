@@ -11,11 +11,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- disable spell for markdown
+-- disable spell for markdown, and show hidden
 -- ref https://github.com/LazyVim/LazyVim/discussions/1470
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "markdown" },
   callback = function()
     vim.opt_local.spell = false
+    vim.opt_local.conceallevel = 0
   end,
 })
