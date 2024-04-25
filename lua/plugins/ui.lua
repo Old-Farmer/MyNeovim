@@ -15,6 +15,17 @@ return {
           return " " .. os.date("%I:%M %p")
         end,
       }
+      table.insert(opts.sections.lualine_c, #opts.sections.lualine_c + 1, {
+        function()
+          if require("luasnip").locally_jumpable(1) then
+            return "🚀"
+          -- elseif require("luasnip").locally_jumpable(-1) then
+          --   return "<<<🚀"
+          else
+            return ""
+          end
+        end,
+      })
     end,
   },
   {

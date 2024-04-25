@@ -66,4 +66,20 @@ return {
     optional = true,
     enabled = false,
   },
+
+  -- Rust
+  -- {
+  --   "mrcjkb/rustaceanvim",
+  --   opts = {
+  --     default_settings = {
+  --       ["rust-analyzer"] = {
+  --         diagnostics = {
+  --           experimental = {
+  --             enable = true,
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }

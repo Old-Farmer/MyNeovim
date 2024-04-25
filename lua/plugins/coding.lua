@@ -14,6 +14,11 @@ return {
   },
 
   -- cmp & snippets
+  -- disable friendly-snippets because not good
+  {
+    "rafamadriz/friendly-snippets",
+    enabled = false,
+  },
   {
     "L3MON4D3/LuaSnip",
     version = "v2.*",
@@ -33,12 +38,15 @@ return {
     --   },
     -- },
     keys = {},
-    -- disable annoying cursor jump
-    -- ref https://github.com/LazyVim/LazyVim/discussions/1985
-    opts = {
-      history = false,
-      region_check_events = "InsertEnter",
-    },
+    opts = function(_, opts)
+      -- Set user snippets loc, default is nvim config path
+      require("luasnip.loaders.from_vscode").lazy_load()
+
+      -- disable annoying cursor jump
+      -- ref https://github.com/LazyVim/LazyVim/discussions/1985
+      opts.history = false
+      opts.region_check_events = "InsertEnter"
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -47,12 +55,6 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      -- local has_words_before = function()
-      --   unpack = unpack or table.unpack
-      --   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-      --   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-      -- end
-
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
@@ -67,7 +69,6 @@ return {
       --   completion = cmp.config.window.bordered(),
       --   documentation = cmp.config.window.bordered(),
       -- }
-      --
 
       -- Disable ghost text
       opts.experimental.ghost_text = false
@@ -101,12 +102,8 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-            -- this way you will only jump inside the snippet region
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-          -- elseif has_words_before() then
-          --   cmp.complete()
+          elseif luasnip.locally_jumpable(1) then
+            luasnip.jump(1)
           else
             fallback()
           end
@@ -114,7 +111,7 @@ return {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-          elseif luasnip.jumpable(-1) then
+          elseif luasnip.locally_jumpable(-1) then
             luasnip.jump(-1)
           else
             fallback()
