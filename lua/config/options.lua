@@ -12,7 +12,8 @@ vim.g.lazyvim_python_lsp = "pyright"
 local opt = vim.opt
 
 opt.scrolloff = 8
-my_lib.set_indentation("", "spaces", 4)
+opt.tabstop = 4
+opt.shiftwidth = 4
 
 -- User commands
 local command = vim.api.nvim_create_user_command
