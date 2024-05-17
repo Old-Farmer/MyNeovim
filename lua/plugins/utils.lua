@@ -1,9 +1,4 @@
 return {
-  {
-    "dstein64/vim-startuptime",
-    enabled = false,
-  },
-
   -- Bookmarks
   {
     "LintaoAmons/bookmarks.nvim",

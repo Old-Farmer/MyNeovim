@@ -20,35 +20,6 @@ return {
     enabled = false,
   },
   { "garymjr/nvim-snippets", opts = { friendly_snippets = false } },
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   version = "v2.*",
-  --   -- dependencies = {
-  --   --   {
-  --   --     "rafamadriz/friendly-snippets",
-  --   --     -- Set user snippets loc
-  --   --     config = function()
-  --   --       require("luasnip.loaders.from_vscode").lazy_load({
-  --   --         default_priority = 2000, -- Make user-defined snippets high priority
-  --   --       })
-  --   --       -- require("luasnip.loaders.from_vscode").load_standalone({
-  --   --       --   paths = { "~/.config/nvim/my_snippets" },
-  --   --       --   -- default_priority = 2000, -- Make user-defined snippets high priority
-  --   --       -- })
-  --   --     end,
-  --   --   },
-  --   -- },
-  --   keys = {},
-  --   opts = function(_, opts)
-  --     -- Set user snippets loc, default is nvim config path
-  --     require("luasnip.loaders.from_vscode").lazy_load()
-  --
-  --     -- disable annoying cursor jump
-  --     -- ref https://github.com/LazyVim/LazyVim/discussions/1985
-  --     opts.history = false
-  --     opts.region_check_events = "InsertEnter"
-  --   end,
-  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
