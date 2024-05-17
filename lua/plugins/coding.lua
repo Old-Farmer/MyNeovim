@@ -19,35 +19,36 @@ return {
     "rafamadriz/friendly-snippets",
     enabled = false,
   },
-  {
-    "L3MON4D3/LuaSnip",
-    version = "v2.*",
-    -- dependencies = {
-    --   {
-    --     "rafamadriz/friendly-snippets",
-    --     -- Set user snippets loc
-    --     config = function()
-    --       require("luasnip.loaders.from_vscode").lazy_load({
-    --         default_priority = 2000, -- Make user-defined snippets high priority
-    --       })
-    --       -- require("luasnip.loaders.from_vscode").load_standalone({
-    --       --   paths = { "~/.config/nvim/my_snippets" },
-    --       --   -- default_priority = 2000, -- Make user-defined snippets high priority
-    --       -- })
-    --     end,
-    --   },
-    -- },
-    keys = {},
-    opts = function(_, opts)
-      -- Set user snippets loc, default is nvim config path
-      require("luasnip.loaders.from_vscode").lazy_load()
-
-      -- disable annoying cursor jump
-      -- ref https://github.com/LazyVim/LazyVim/discussions/1985
-      opts.history = false
-      opts.region_check_events = "InsertEnter"
-    end,
-  },
+  { "garymjr/nvim-snippets", opts = { friendly_snippets = false } },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   version = "v2.*",
+  --   -- dependencies = {
+  --   --   {
+  --   --     "rafamadriz/friendly-snippets",
+  --   --     -- Set user snippets loc
+  --   --     config = function()
+  --   --       require("luasnip.loaders.from_vscode").lazy_load({
+  --   --         default_priority = 2000, -- Make user-defined snippets high priority
+  --   --       })
+  --   --       -- require("luasnip.loaders.from_vscode").load_standalone({
+  --   --       --   paths = { "~/.config/nvim/my_snippets" },
+  --   --       --   -- default_priority = 2000, -- Make user-defined snippets high priority
+  --   --       -- })
+  --   --     end,
+  --   --   },
+  --   -- },
+  --   keys = {},
+  --   opts = function(_, opts)
+  --     -- Set user snippets loc, default is nvim config path
+  --     require("luasnip.loaders.from_vscode").lazy_load()
+  --
+  --     -- disable annoying cursor jump
+  --     -- ref https://github.com/LazyVim/LazyVim/discussions/1985
+  --     opts.history = false
+  --     opts.region_check_events = "InsertEnter"
+  --   end,
+  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -55,7 +56,6 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      local luasnip = require("luasnip")
       local cmp = require("cmp")
 
       -- -- Don't preselect ,ref https://github.com/hrsh7th/nvim-cmp/discussions/1411
@@ -102,8 +102,6 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-          elseif luasnip.locally_jumpable(1) then
-            luasnip.jump(1)
           else
             fallback()
           end
@@ -111,8 +109,6 @@ return {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
           else
             fallback()
           end

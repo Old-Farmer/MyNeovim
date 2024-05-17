@@ -25,6 +25,12 @@ return {
         mode = { "n", "v" },
       },
       { "<leader>mc", "<cmd>BookmarksCommands<cr>", desc = "Find and trigger a bookmark command", mode = { "n", "v" } },
+      {
+        "<leader>mr",
+        "<cmd>BookmarksGotoRecent<cr>",
+        desc = "Go to latest visited/created Bookmark",
+        mode = { "n", "v" },
+      },
     },
     opts = {
       json_db_path = vim.fs.normalize(vim.fn.stdpath("data") .. "/bookmarks.db.json"), -- Store in data path

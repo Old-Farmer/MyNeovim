@@ -1,24 +1,10 @@
 {
-	"Hello world": {
-		"prefix": "helloworld",
-		"body": [
-			"#include <stdio.h>",
-			"",
-			"int main(int argc, char* argv[]) {",
-			"\tprintf(\"Hello, world!\");",
-			"\treturn 0;",
-			"}"
-		],
-		"description": "Hello world program",
-		"isFileTemplate": true
-	},
 	"#pragma once": {
 		"prefix": "#po",
 		"body": [
 			"#pragma once"
 		],
-		"description": "#pragma once",
-		"isFileTemplate": true
+		"description": "#pragma once"
 	},
 	"Index for snippet": {
 		"prefix": "for",
@@ -35,8 +21,7 @@
 			"for (${1:int} ${2:i} = ${3:length} - 1; ${2:i} >= ${4:0}; --${2:i}) {",
 			"\t$0",
 			"}"
-		],
-		"description": "Index reverse for snippet"
+		]
 	},
 	"enum snippet": {
 		"prefix": "enum",
@@ -50,18 +35,18 @@
 	"#ifdef snippet": {
 		"prefix": "#ifdef",
 		"body": [
-			"#ifdef ${var}",
+			"#ifdef ${1:var}",
 			"$0",
-			"#endif // ${var}"
+			"#endif // ${1:var}"
 		],
 		"description": "#ifdef snippet"
 	},
 	"#ifndef snippet": {
 		"prefix": "#ifndef",
 		"body": [
-			"#ifndef ${var}",
+			"#ifndef ${1:var}",
 			"$0",
-			"#endif // !${var}"
+			"#endif // !${1:var}"
 		],
 		"description": "#ifndef snippet"
 	},

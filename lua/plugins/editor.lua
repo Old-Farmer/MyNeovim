@@ -10,7 +10,7 @@ return {
           visible = true,
           -- hide_hidden = false,
           -- hide_dotfiles = false,
-          -- hide_gitignored = false,
+          -- hide_gitignored = true,
         },
       },
     },

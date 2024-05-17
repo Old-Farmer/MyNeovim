@@ -5,7 +5,7 @@ local my_lib = require("my_lib")
 
 -- Indentation for FileType
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "lua", "cmake" },
+  pattern = { "lua", "cmake", "markdown" },
   callback = function()
     my_lib.set_indentation("local", "spaces", 2)
   end,

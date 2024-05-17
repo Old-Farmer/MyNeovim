@@ -1,24 +1,10 @@
 {
-	"Hello world": {
-		"prefix": "helloworld",
-		"body": [
-			"#include <iostream>",
-			"",
-			"int main() {",
-			"\tstd::cout << \"Hello, world!\" << std::endl;",
-			"\treturn 0;",
-			"}"
-		],
-		"description": "Hello world program",
-		"isFileTemplate": true
-	},
 	"#pragma once": {
 		"prefix": "#po",
 		"body": [
 			"#pragma once"
 		],
-		"description": "#pragma once",
-		"isFileTemplate": true
+		"description": "#pragma once"
 	},
 	"Print line in c++ style": {
 		"prefix": "println",
@@ -46,7 +32,7 @@
 	"Range-based for snippet": {
 		"prefix": "rfor",
 		"body": [
-			"for (${1|auto&,auto,auto&&|} ${2:var} : ${3:collection_to_loop}) {",
+			"for (${1:auto&&} ${2:var} : ${3:collection_to_loop}) {",
 			"\t$0",
 			"}"
 		],
@@ -82,24 +68,24 @@
 	"class snippet": {
 		"prefix": "class",
 		"body": [
-			"class ${NewClass} {",
+			"class ${1:NewClass} {",
 			"public:",
-			"\t${NewClass}();",
-			"\t${NewClass}(${NewClass}&&) = default;",
-			"\t${NewClass}(const ${NewClass}&) = default;",
-			"\t${NewClass}& operator=(${NewClass}&&) = default;",
-			"\t${NewClass}& operator=(const ${NewClass}&) = default;",
-			"\t~${NewClass}();",
+			"\t${1:NewClass}();",
+			"\t${1:NewClass}(${1:NewClass}&&) = default;",
+			"\t${1:NewClass}(const ${1:NewClass}&) = default;",
+			"\t${1:NewClass}& operator=(${1:NewClass}&&) = default;",
+			"\t${1:NewClass}& operator=(const ${1:NewClass}&) = default;",
+			"\t~${1:NewClass}();",
 			"",
 			"private:",
 			"\t$0",
 			"};",
 			"",
-			"${NewClass}::${NewClass}() {",
+			"${1:NewClass}::${1:NewClass}() {",
 			"\t",
 			"}",
 			"",
-			"${NewClass}::~${NewClass}() {",
+			"${1:NewClass}::~${1:NewClass}() {",
 			"\t",
 			"}"
 		],
@@ -108,18 +94,18 @@
 	"#ifdef snippet": {
 		"prefix": "#ifdef",
 		"body": [
-			"#ifdef ${var}",
+			"#ifdef ${1:var}",
 			"$0",
-			"#endif // ${var}"
+			"#endif // ${1:var}"
 		],
 		"description": "#ifdef snippet"
 	},
 	"#ifndef snippet": {
 		"prefix": "#ifndef",
 		"body": [
-			"#ifndef ${var}",
+			"#ifndef ${1:var}",
 			"$0",
-			"#endif // !${var}"
+			"#endif // !${1:var}"
 		],
 		"description": "#ifndef snippet"
 	},
@@ -161,11 +147,5 @@
 			"}"
 		],
 		"description": "main function"
-	},
-    "snip1": {
-		"prefix": "lua",
-		"body": [
-			"lualualua"
-		]
 	}
 }

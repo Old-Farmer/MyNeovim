@@ -1,5 +1,28 @@
 #!/bin/bash
 
+function split_version() {
+    local version=${1:1}
+    IFS='.' read -r major minor patch <<< "$version"
+    echo "$major" "$minor" "$patch"
+}
+
+function compare_versions() {
+    local ver1=($(split_version $1))
+    local ver2=($(split_version $2))
+
+    for i in {0..2}; do
+        if [[ ${ver1[i]} -lt ${ver2[i]} ]]; then
+            echo -1
+            return
+        elif [[ ${ver1[i]} -gt ${ver2[i]} ]]; then
+            echo 1
+            return
+        fi
+    done
+
+    echo 0
+}
+
 # old
 #wget -nv https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 #rm -rf ${HOME}/nvim-linux64
@@ -23,6 +46,8 @@ function install_nvim_by_binary() {
     mkdir -p "$HOME/.local/bin"
     cd "$HOME/.local/bin"
     ln -sf "$HOME/nvim-linux64/bin/nvim" nvim
+    # cd /usr/local/bin
+    # sudo ln -sf "$HOME/nvim-linux64/bin/nvim" nvim
 }
 
 latest_version_info_link=https://api.github.com/repos/neovim/neovim/releases/latest
@@ -42,7 +67,7 @@ if [ -z $current_version ]; then
     echo "Installing..."
     install_nvim_by_binary
     current_version=$(nvim --version 2>/dev/null | head -n 1 | cut -d ' ' -f 2)
-elif [[ $current_version < $latest_stable_version ]]; then
+elif [[ $(compare_versions $current_version $latest_stable_version) -eq -1 ]]; then
     echo "Update needed:" $current_version "->" $latest_stable_version
     echo "Updating..."
     install_nvim_by_binary
