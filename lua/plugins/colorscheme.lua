@@ -23,28 +23,9 @@ return {
     -- },
   },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = true,
-    enabled = false,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
-    lazy = true,
-    enabled = false,
-    opts = {
-      theme = "dragon",
-    },
-  },
-
-  {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "kanagawa",
-      -- colorscheme = "rose-pine",
       colorscheme = "catppuccin",
-      -- colorscheme = "tokyonight",
     },
   },
 }
