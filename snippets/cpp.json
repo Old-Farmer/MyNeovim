@@ -112,7 +112,7 @@
 	"struct snippet": {
 		"prefix": "struct",
 		"body": [
-			"struct ${NewStruct} {",
+			"struct ${1:NewStruct} {",
 			"\t$0",
 			"};"
 		],
@@ -121,7 +121,7 @@
 	"switch snippet": {
 		"prefix": "switch",
 		"body": [
-			"switch (${switch_on}) {",
+			"switch (${1:switch_on}) {",
 			"\t$0",
 			"\tdefault:",
 			"\t\tbreak;",
@@ -132,7 +132,7 @@
 	"union snippet": {
 		"prefix": "union",
 		"body": [
-			"union ${NewUnion} {",
+			"union ${1:NewUnion} {",
 			"\t$0",
 			"};"
 		],
