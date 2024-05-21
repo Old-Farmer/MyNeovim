@@ -23,7 +23,7 @@ return {
       {
         "<leader>mr",
         "<cmd>BookmarksGotoRecent<cr>",
-        desc = "Go to latest visited/created Bookmark",
+        desc = "Go to recent visited/created Bookmark",
         mode = { "n", "v" },
       },
     },

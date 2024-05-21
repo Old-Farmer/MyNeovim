@@ -15,6 +15,8 @@ opt.scrolloff = 8
 opt.tabstop = 4
 opt.shiftwidth = 4
 
+opt.guicursor:append('a:blinkon500-blinkoff500')
+
 -- User commands
 local command = vim.api.nvim_create_user_command
 

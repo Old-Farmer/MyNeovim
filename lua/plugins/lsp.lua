@@ -36,7 +36,7 @@ return {
         desc = "goto preview references",
       },
       {
-        "<leader>P",
+        "<leader>pc",
         "<cmd>lua require('goto-preview').close_all_win()<CR>",
         noremap = true,
         desc = "close all preview windows",
