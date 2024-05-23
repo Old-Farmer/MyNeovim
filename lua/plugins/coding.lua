@@ -5,7 +5,7 @@ return {
     event = "InsertEnter",
     config = true,
     opts = {
-      enable_bracket_in_quote = false,
+      -- enable_bracket_in_quote = false,
     },
   },
   {

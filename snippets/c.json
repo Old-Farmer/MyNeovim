@@ -7,7 +7,7 @@
 		"description": "#pragma once"
 	},
 	"Index for snippet": {
-		"prefix": "for",
+		"prefix": "fori",
 		"body": [
 			"for (${1:size_t} ${2:i} = ${3:0}; ${2:i} < ${4:length}; ++${2:i}) {",
 			"\t$0",

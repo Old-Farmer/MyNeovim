@@ -13,7 +13,6 @@ return {
     dim_inactive = {
       enabled = true,
     },
-    name = "catppuccin",
     -- opts = {
     --   flavour = "latte", -- latte, frappe, macchiato, mocha
     --   background = { -- :h background

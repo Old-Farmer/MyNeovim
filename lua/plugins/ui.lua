@@ -51,13 +51,13 @@ return {
       -- messages = {
       --   enabled = false,
       -- },
-      -- lsp = {
-      --   signature = {
-      --     auto_open = {
-      --       enabled = false,
-      --     },
-      --   },
-      -- },
+      lsp = {
+        signature = {
+          auto_open = {
+            enabled = false,
+          },
+        },
+      },
       presets = {
         lsp_doc_border = true,
       },
