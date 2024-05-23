@@ -41,6 +41,21 @@ return {
       --   documentation = cmp.config.window.bordered(),
       -- }
 
+      -- opts.formatting = {
+      --   format = function(_, item)
+      --     local icons = require("lazyvim.config").icons.kinds
+      --     if icons[item.kind] then
+      --       item.kind = icons[item.kind]
+      --     end
+      --     return item
+      --   end,
+      -- }
+
+      -- Disable auto open docs
+      opts.view = {
+        docs = { auto_open = false },
+      }
+
       -- Disable ghost text
       opts.experimental.ghost_text = false
 
