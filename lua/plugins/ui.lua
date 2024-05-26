@@ -17,7 +17,8 @@ return {
       }
       table.insert(opts.sections.lualine_c, #opts.sections.lualine_c + 1, {
         function()
-          if vim.snippet.active({ direction = 1 }) then
+          -- if vim.snippet.active({ direction = 1 }) then
+          if require("luasnip").locally_jumpable(1) then
             return "🚀"
           else
             return ""

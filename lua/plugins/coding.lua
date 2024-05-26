@@ -19,7 +19,20 @@ return {
     "rafamadriz/friendly-snippets",
     enabled = false,
   },
-  { "garymjr/nvim-snippets", opts = { friendly_snippets = false } },
+  { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
+  {
+    "L3MON4D3/LuaSnip",
+    keys = {},
+    opts = function(_, opts)
+      -- Set user snippets loc, default is nvim config path
+      require("luasnip.loaders.from_vscode").lazy_load()
+
+      -- disable annoying cursor jump
+      -- ref https://github.com/LazyVim/LazyVim/discussions/1985
+      opts.history = false
+      opts.region_check_events = "InsertEnter"
+    end,
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -27,6 +40,7 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      local luasnip = require("luasnip")
       local cmp = require("cmp")
 
       -- -- Don't preselect ,ref https://github.com/hrsh7th/nvim-cmp/discussions/1411
@@ -88,6 +102,8 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          elseif luasnip.locally_jumpable(1) then
+            luasnip.jump(1)
           else
             fallback()
           end
@@ -95,6 +111,8 @@ return {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+          elseif luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
           else
             fallback()
           end

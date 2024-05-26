@@ -1,0 +1,37 @@
+{
+	"name": "example-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"cpp"
+				],
+				"path": "./snippets/cpp.json"
+			},
+			{
+				"language": [
+					"c"
+				],
+				"path": "./snippets/c.json"
+			},
+			{
+				"language": [
+					"yaml"
+				],
+				"path": "./snippets/yaml.json"
+			},
+			{
+				"language": [
+					"json"
+				],
+				"path": "./snippets/json.json"
+			},
+			{
+				"language": [
+					"cmake"
+				],
+				"path": "./snippets/cmake.json"
+			}
+		]
+	}
+}
