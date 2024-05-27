@@ -48,7 +48,8 @@ return {
     "folke/noice.nvim",
     opts = {
       -- cmdline = {
-      --   view = "cmdline",
+      --   enabled = false,
+      --   -- view = "cmdline",
       -- },
       -- messages = {
       --   enabled = false,
@@ -63,6 +64,14 @@ return {
       presets = {
         lsp_doc_border = true,
       },
+      -- views = {
+      --   mini = {
+      --     position = {
+      --       row = -2,
+      --       col = "100%",
+      --     },
+      --   },
+      -- },
     },
   },
 }
