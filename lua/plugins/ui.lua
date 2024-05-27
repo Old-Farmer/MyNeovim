@@ -42,6 +42,7 @@ return {
       logo = string.rep("\n", 6) .. logo .. "\n\n"
       opts.config.header = vim.split(logo, "\n")
     end,
+    enabled = false,
   },
   {
     "folke/noice.nvim",

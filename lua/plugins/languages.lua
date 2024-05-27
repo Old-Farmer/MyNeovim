@@ -24,7 +24,7 @@ return {
             "--header-insertion=never",
             "--query-driver=/usr/bin/cc,/usr/bin/c++,/usr/bin/gcc,/usr/bin/g++,/usr/bin/gcc-12,/usr/bin/g++-12,/usr/bin/gcc-13,/usr/bin/g++-13,/usr/bin/clang,/usr/bin/clang++",
             "--pretty",
-            "--log=info",
+            -- "--log=info",
             "--background-index",
             "--clang-tidy",
             "--completion-style=detailed",
