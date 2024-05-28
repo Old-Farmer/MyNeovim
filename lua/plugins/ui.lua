@@ -39,17 +39,17 @@ return {
               ╚═╝     ╚═╝   ╚═╝     ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝        
                                                         A  IDE Based on LazyVim/LazyVim      
     ]]
-      logo = string.rep("\n", 6) .. logo .. "\n\n"
+      logo = string.rep("\n", 8) .. logo .. "\n\n"
       opts.config.header = vim.split(logo, "\n")
     end,
-    enabled = false,
+    -- enabled = false,
   },
   {
     "folke/noice.nvim",
     opts = {
       -- cmdline = {
       --   enabled = false,
-      --   -- view = "cmdline",
+      --   view = "cmdline",
       -- },
       -- messages = {
       --   enabled = false,
