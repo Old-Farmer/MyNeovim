@@ -44,7 +44,7 @@ return {
         "<leader>py",
         "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
         noremap = true,
-        desc = "goto preview type definition",
+        desc = "goto preview t[y]pe definition",
       },
       {
         "<leader>pr",

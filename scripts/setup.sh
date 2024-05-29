@@ -23,7 +23,7 @@ install lazygit $HOME/.local/bin
 
 # recommend fnm(https://github.com/Schniz/fnm) to manage node
 curl -fsSL https://fnm.vercel.app/install | bash  # install
-curl -fsSL https://fnm.vercel.app/install | bash --skip-shell # upgrade
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell # upgrade
 
 # use .node-version
 # change
@@ -56,6 +56,10 @@ nvm use --lts
 
 # python3 and pip3 is also needed for some lsp servers
 # Linux distributions always install them
+
+# And python3.x-venv needed
+# e.g.
+sudo apt install python3.11-venv
 
 # cargo maybe needed by mason.nvim too
 curl https://sh.rustup.rs -sSf | sh
