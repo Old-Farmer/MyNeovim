@@ -20,3 +20,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.conceallevel = 0
   end,
 })
+
+-- Terminal
+local terminal = vim.api.nvim_create_augroup("MyTerminal", { clear = true })
+-- Switch to insert mode when open/enter terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  command = "startinsert",
+  group = terminal,
+})
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "term://*",
+  command = "startinsert",
+  group = terminal,
+})
