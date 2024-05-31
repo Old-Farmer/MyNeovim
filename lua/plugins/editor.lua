@@ -65,6 +65,7 @@ return {
     opts = {
       defaults = {
         ["<leader>p"] = { name = "+goto-preview" },
+        ["<leader><tab>"] = nil, -- as del tab maps
       },
     },
   },

@@ -8,14 +8,22 @@ local map = vim.keymap.set
 local mapdel = vim.keymap.del
 
 -- Window
-map("n", "<leader>ws", "<C-W>s", { desc = "Split Window", remap = true })
-map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically", remap = true })
 mapdel("n", "<leader>w-")
 mapdel("n", "<leader>w|")
 mapdel("n", "<leader>-")
 mapdel("n", "<leader>|")
+map("n", "<leader>ws", "<C-W>s", { desc = "Split Window", remap = true })
+map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically", remap = true })
 
 -- Buffer
 mapdel("n", "<leader>`")
 mapdel("n", "[b")
 mapdel("n", "]b")
+
+-- Tab
+mapdel("n", "<leader><tab>l")
+mapdel("n", "<leader><tab>f")
+mapdel("n", "<leader><tab><tab>")
+mapdel("n", "<leader><tab>]")
+mapdel("n", "<leader><tab>[")
+mapdel("n", "<leader><tab>d")
