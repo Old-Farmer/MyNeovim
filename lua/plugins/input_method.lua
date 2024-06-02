@@ -2,7 +2,7 @@ return {
   {
     "Old-Farmer/im-autoswitch.nvim",
     -- dir = "~/projects/im-autoswitch.nvim",
-    event = "VeryLazy",
+    event = "BufEnter",
     opts = {
       cmd = {
         default_im = "1",
