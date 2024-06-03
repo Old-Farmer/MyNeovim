@@ -19,7 +19,7 @@ map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically", remap = tru
 mapdel("n", "<leader>`")
 mapdel("n", "[b")
 mapdel("n", "]b")
-map("n", "<leader>r", "<leader>bd", { desc = "Remove(Delete) Buffer" })
+map("n", "<leader>r", "<leader>bd", { desc = "Remove(Delete) Buffer", remap = true })
 map("t", "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer(terminal)" })
 map("t", "<A-l>", "<cmd>bnext<cr>", { desc = "Next Buffer(terminal)" })
 
