@@ -15,8 +15,13 @@ return {
   {
     "mfussenegger/nvim-dap",
     optional = true,
-    opts = function ()
-      vim.cmd("au FileType dap-repl lua require('dap.ext.autocompl').attach()")
+    opts = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "dap-repl",
+        callback = function()
+          require("dap.ext.autocompl").attach()
+        end,
+      })
     end,
     -- stylua: ignore
     keys = {

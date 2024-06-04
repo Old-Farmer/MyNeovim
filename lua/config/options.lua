@@ -12,3 +12,9 @@ opt.shiftwidth = 4
 opt.scrolloff = 8
 opt.shortmess:remove("I") -- Show welcome again because I diable dashboard-nvim
 opt.tabstop = 4
+
+-- termdebug
+local termdebug_config = {
+  wide = 1,
+}
+vim.g.termdebug_config = termdebug_config
