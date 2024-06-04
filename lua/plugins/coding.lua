@@ -22,7 +22,6 @@ return {
   { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
   {
     "L3MON4D3/LuaSnip",
-    keys = {},
     opts = function(_, opts)
       -- Set user snippets loc, default is nvim config path
       require("luasnip.loaders.from_vscode").lazy_load()
@@ -35,9 +34,10 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
+    -- dependencies = {
+    --   "hrsh7th/cmp-emoji",
+    -- },
+    keys = {},
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local luasnip = require("luasnip")
