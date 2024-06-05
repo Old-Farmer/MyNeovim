@@ -21,14 +21,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- Terminal
-local terminal = vim.api.nvim_create_augroup("MyTerminal", { clear = true })
--- Switch to insert mode when open/enter terminal
-vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*",
-  command = "startinsert",
-  group = terminal,
-})
+-- -- Terminal
+-- local terminal = vim.api.nvim_create_augroup("MyTerminal", { clear = true })
+-- -- Switch to insert mode when open/enter terminal
+-- vim.api.nvim_create_autocmd("TermOpen", {
+--   pattern = "*",
+--   command = "startinsert",
+--   group = terminal,
+-- })
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = "term://*",
 --   command = "startinsert",
