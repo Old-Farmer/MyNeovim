@@ -29,8 +29,8 @@ vim.api.nvim_create_autocmd("TermOpen", {
   command = "startinsert",
   group = terminal,
 })
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "term://*",
-  command = "startinsert",
-  group = terminal,
-})
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "term://*",
+--   command = "startinsert",
+--   group = terminal,
+-- })

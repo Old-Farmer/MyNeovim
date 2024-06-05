@@ -2,6 +2,7 @@ return {
   -- C/C++
   {
     "neovim/nvim-lspconfig",
+    optional = true,
     opts = function(_, opts)
       local clangd = opts.servers.clangd
 
@@ -35,6 +36,7 @@ return {
   -- CMake
   {
     "Civitasv/cmake-tools.nvim",
+    optional = true,
     enabled = false,
   },
 
@@ -42,6 +44,7 @@ return {
   -- -- not ensure_installed markdown treesitter, just as ref, not use
   -- {
   --   "nvim-treesitter/nvim-treesitter",
+  --   optional = true,
   --   opts = function(_, opts)
   --     opts.ensure_installed = vim.tbl_filter(function(i)
   --       return not vim.tbl_contains({ i }, "markdown")
@@ -68,6 +71,7 @@ return {
   -- Rust
   -- {
   --   "mrcjkb/rustaceanvim",
+  --   optional = true,
   --   opts = {
   --     default_settings = {
   --       ["rust-analyzer"] = {
