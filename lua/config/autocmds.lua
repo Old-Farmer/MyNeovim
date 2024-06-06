@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     my_lib.set_indentation("local", "spaces", 2)
   end,
+  desc = "set indentation for some ft",
 })
 
 -- disable spell for markdown, and show hidden
@@ -19,6 +20,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.spell = false
     vim.opt_local.conceallevel = 0
   end,
+  desc = "disable spell for markdown, and show hidden",
 })
 
 -- -- Terminal
@@ -34,3 +36,25 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 --   command = "startinsert",
 --   group = terminal,
 -- })
+
+-- inlay hint disable in insert
+vim.api.nvim_create_autocmd("InsetEnter", {
+  callback = function(args)
+    local filter = { bufnr = args.buf }
+    -- if the inlay hints are currently enabled
+    if vim.lsp.inlay_hint.is_enabled(filter) then
+      -- disable the inlay hints
+      vim.lsp.inlay_hint.enable(false, filter)
+      -- create a single use autocommand to turn the inlay hints back on
+      -- when leaving insert mode
+      vim.api.nvim_create_autocmd("InsertLeave", {
+        buffer = args.buf,
+        once = true,
+        callback = function()
+          vim.lsp.inlay_hint.enable(true, filter)
+        end,
+      })
+    end
+  end,
+  desc = "disable inlay hints on insert",
+})
