@@ -37,24 +37,24 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 --   group = terminal,
 -- })
 
--- inlay hint disable in insert
-vim.api.nvim_create_autocmd("InsertEnter", {
-  callback = function(args)
-    local filter = { bufnr = args.buf }
-    -- if the inlay hints are currently enabled
-    if vim.lsp.inlay_hint.is_enabled(filter) then
-      -- disable the inlay hints
-      vim.lsp.inlay_hint.enable(false, filter)
-      -- create a single use autocommand to turn the inlay hints back on
-      -- when leaving insert mode
-      vim.api.nvim_create_autocmd("InsertLeave", {
-        buffer = args.buf,
-        once = true,
-        callback = function()
-          vim.lsp.inlay_hint.enable(true, filter)
-        end,
-      })
-    end
-  end,
-  desc = "disable inlay hints on insert",
-})
+-- -- inlay hint disable in insert
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+--   callback = function(args)
+--     local filter = { bufnr = args.buf }
+--     -- if the inlay hints are currently enabled
+--     if vim.lsp.inlay_hint.is_enabled(filter) then
+--       -- disable the inlay hints
+--       vim.lsp.inlay_hint.enable(false, filter)
+--       -- create a single use autocommand to turn the inlay hints back on
+--       -- when leaving insert mode
+--       vim.api.nvim_create_autocmd("InsertLeave", {
+--         buffer = args.buf,
+--         once = true,
+--         callback = function()
+--           vim.lsp.inlay_hint.enable(true, filter)
+--         end,
+--       })
+--     end
+--   end,
+--   desc = "disable inlay hints on insert",
+-- })
