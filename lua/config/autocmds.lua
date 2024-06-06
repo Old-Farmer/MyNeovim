@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- })
 
 -- inlay hint disable in insert
-vim.api.nvim_create_autocmd("InsetEnter", {
+vim.api.nvim_create_autocmd("InsertEnter", {
   callback = function(args)
     local filter = { bufnr = args.buf }
     -- if the inlay hints are currently enabled
