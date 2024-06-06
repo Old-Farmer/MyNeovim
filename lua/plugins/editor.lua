@@ -96,6 +96,25 @@ return {
     },
     keys = {
       {
+        "<leader>ta",
+        "<cmd>ToggleTermToggleAll<cr>",
+        desc = "ToggleTerm Toggle All",
+      },
+      {
+        "<leader>tf",
+        function()
+          require("toggleterm").toggle(vim.v.count1, nil, LazyVim.root(), "float")
+        end,
+        desc = "ToggleTerm (Float Root Dir)",
+      },
+      {
+        "<leader>tF",
+        function()
+          require("toggleterm").toggle(vim.count1, nil, vim.uv.cwd(), "float")
+        end,
+        desc = "ToggleTerm (Float cwd)",
+      },
+      {
         "<leader>th",
         function()
           require("toggleterm").toggle(vim.v.count1, nil, LazyVim.root(), "horizontal")
@@ -159,5 +178,35 @@ return {
       end,
       open_mapping = [[<c-\>]],
     },
+  },
+
+  -- undo visualizer
+  {
+    "debugloop/telescope-undo.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+      },
+    },
+    keys = {
+      {
+        "<leader>uo",
+        "<cmd>Telescope undo<cr>",
+        desc = "undo history",
+      },
+    },
+    opts = {
+      extensions = {
+        undo = {
+          -- telescope-undo.nvim config, see below
+        },
+        -- no other extensions here, they can have their own spec too
+      },
+    },
+    config = function(_, opts)
+      require("telescope").setup(opts)
+      require("telescope").load_extension("undo")
+    end,
   },
 }
