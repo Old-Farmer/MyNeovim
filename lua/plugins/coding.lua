@@ -12,7 +12,7 @@ return {
       npairs.add_rules({
         rule("<", ">")
           -- not effective with "[%w.]>" , may be bugs
-          :with_pair(cond.not_after_regex("[^%s]"))
+          :with_pair(cond.not_after_regex("[^%s]")),
       })
     end,
   },
@@ -30,6 +30,8 @@ return {
   { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
   {
     "L3MON4D3/LuaSnip",
+    event = "InsertEnter",
+    optional = true,
     opts = function(_, opts)
       -- Set user snippets loc, default is nvim config path
       require("luasnip.loaders.from_vscode").lazy_load()
