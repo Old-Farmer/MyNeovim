@@ -1,21 +1,4 @@
 return {
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      window = {
-        width = 30,
-      },
-      filesystem = {
-        filtered_items = {
-          visible = true,
-          -- hide_hidden = false,
-          -- hide_dotfiles = false,
-          -- hide_gitignored = true,
-        },
-      },
-    },
-  },
-
   -- goto-preview
   {
     "rmagatti/goto-preview",
@@ -191,9 +174,9 @@ return {
     },
     keys = {
       {
-        "<leader>uo",
+        "<leader>su",
         "<cmd>Telescope undo<cr>",
-        desc = "undo history",
+        desc = "Undo History",
       },
     },
     opts = {
@@ -208,5 +191,53 @@ return {
       require("telescope").setup(opts)
       require("telescope").load_extension("undo")
     end,
+  },
+
+  -- file explorer
+  -- Not use oil now
+  {
+    "stevearc/oil.nvim",
+    enabled = false,
+    cmd = "Oil",
+    keys = {
+      {
+        "<leader>fo",
+        function()
+          require("oil").open_float(vim.uv.cwd())
+        end,
+        desc = "Oil (Floating cwd)",
+      },
+      {
+        "<leader>fO",
+       function()
+          require("oil").open_float(nil)
+        end,
+        desc = "Oil (Floating Buffer Parent Dir)",
+      },
+    },
+    opts = {
+      default_file_explorer = false,
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    -- keys = {
+    --   { "<leader>fe", false },
+    --   { "<leader>fE", false },
+    -- },
+    opts = {
+      window = {
+        width = 30,
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          -- hide_hidden = false,
+          -- hide_dotfiles = false,
+          -- hide_gitignored = true,
+        },
+      },
+    },
   },
 }

@@ -7,19 +7,20 @@ require("config.cmds") -- commands here
 local map = vim.keymap.set
 local mapdel = vim.keymap.del
 
+-- File
+mapdel("n", "<leader>fn")
+
 -- Window
 mapdel("n", "<leader>w-")
 mapdel("n", "<leader>w|")
 mapdel("n", "<leader>-")
 mapdel("n", "<leader>|")
+mapdel("n", "<leader>wm")
 map("n", "<leader>ws", "<C-W>s", { desc = "Split Window", remap = true })
 map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically", remap = true })
 
 -- Buffer
 mapdel("n", "<leader>`")
-map("n", "<leader>r", "<leader>bd", { desc = "Remove(Delete) Buffer", remap = true })
--- map("t", "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer(terminal)" })
--- map("t", "<A-l>", "<cmd>bnext<cr>", { desc = "Next Buffer(terminal)" })
 
 -- Tab
 mapdel("n", "<leader><tab>l")

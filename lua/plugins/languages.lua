@@ -5,7 +5,6 @@ return {
     optional = true,
     opts = function(_, opts)
       local clangd = opts.servers.clangd
-
       clangd.root_dir = function(fname)
         return require("lspconfig.util").root_pattern(".clangd", ".clang-tidy", ".clang-format")(fname)
           or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(fname)
