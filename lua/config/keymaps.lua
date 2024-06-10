@@ -15,9 +15,8 @@ mapdel("n", "<leader>w-")
 mapdel("n", "<leader>w|")
 mapdel("n", "<leader>-")
 mapdel("n", "<leader>|")
-mapdel("n", "<leader>wm")
-map("n", "<leader>ws", "<C-W>s", { desc = "Split Window", remap = true })
-map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically", remap = true })
+map("n", "<leader>ws", "<C-W>s", { desc = "Split Window" })
+map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically" })
 
 -- Buffer
 mapdel("n", "<leader>`")

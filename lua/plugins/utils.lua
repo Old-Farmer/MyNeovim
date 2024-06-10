@@ -8,20 +8,20 @@ return {
     event = "VeryLazy",
     keys = {
       {
-        "<leader>km",
+        "<leader>mm",
         "<cmd>BookmarksMark<cr>",
         desc = "Mark current line into active BookmarkList",
         mode = { "n", "v" },
       },
       {
-        "<leader>kg",
+        "<leader>mg",
         "<cmd>BookmarksGoto<cr>",
         desc = "Go to bookmark at current active BookmarkList",
         mode = { "n", "v" },
       },
-      { "<leader>kc", "<cmd>BookmarksCommands<cr>", desc = "Find and trigger a bookmark command", mode = { "n", "v" } },
+      { "<leader>mc", "<cmd>BookmarksCommands<cr>", desc = "Find and trigger a bookmark command", mode = { "n", "v" } },
       {
-        "<leader>kr",
+        "<leader>mr",
         "<cmd>BookmarksGotoRecent<cr>",
         desc = "Go to recent visited/created Bookmark",
         mode = { "n", "v" },
@@ -35,7 +35,7 @@ return {
     "folke/which-key.nvim",
     opts = {
       defaults = {
-        ["<leader>k"] = { name = "+boo[k]mar[k]" },
+        ["<leader>m"] = { name = "+book[m]ark" },
       },
     },
   },

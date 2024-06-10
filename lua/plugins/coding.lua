@@ -27,14 +27,15 @@ return {
     "rafamadriz/friendly-snippets",
     enabled = false,
   },
-  { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
+  -- LuaSnip extra disable it already
+  -- { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
   {
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
     optional = true,
     opts = function(_, opts)
-      -- Set user snippets loc, default is nvim config path
-      require("luasnip.loaders.from_vscode").lazy_load()
+      -- -- Set user snippets loc, default is nvim config path
+      -- require("luasnip.loaders.from_vscode").lazy_load()
 
       -- disable annoying cursor jump
       -- ref https://github.com/LazyVim/LazyVim/discussions/1985

@@ -55,17 +55,17 @@ return {
   },
 
   -- telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      { "<leader>,", false },
-      {
-        "<leader>bs",
-        "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
-        desc = "Switch Buffer(Telescope)",
-      },
-    },
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   keys = {
+  --     { "<leader>,", false },
+  --     {
+  --       "<leader>bs",
+  --       "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+  --       desc = "Switch Buffer(Telescope)",
+  --     },
+  --   },
+  -- },
 
   -- terminal
   {
