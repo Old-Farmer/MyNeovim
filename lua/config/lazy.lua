@@ -16,7 +16,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 
-    -- Must put extra here, because my plugin specs should override extras
+    -- Must put extras here, because my plugin specs should override extras
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.luasnip" }, -- Due to the lack of native snippet functionality Use Lua snip instead now
     { import = "lazyvim.plugins.extras.dap.core" },
