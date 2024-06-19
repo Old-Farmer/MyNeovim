@@ -1,33 +1,11 @@
 return {
-  -- autopairs
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = function(_, opts)
-      require("nvim-autopairs").setup(opts)
-      local npairs = require("nvim-autopairs")
-      local rule = require("nvim-autopairs.rule")
-      local cond = require("nvim-autopairs.conds")
-
-      npairs.add_rules({
-        rule("<", ">")
-          -- not effective with "[%w.]>" , may be bugs
-          :with_pair(cond.not_after_regex("[^%s]")),
-      })
-    end,
-  },
-  {
-    "echasnovski/mini.pairs",
-    enabled = false,
-  },
-
   -- cmp & snippets
   -- disable friendly-snippets because not good
   {
     "rafamadriz/friendly-snippets",
     enabled = false,
   },
-  -- LuaSnip extra disable it already
+  -- LuaSnip extra has disabled it already
   -- { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
   {
     "L3MON4D3/LuaSnip",
@@ -45,9 +23,6 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    -- dependencies = {
-    --   "hrsh7th/cmp-emoji",
-    -- },
     keys = {},
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)

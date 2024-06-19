@@ -5,10 +5,11 @@ return {
     optional = true,
     opts = function(_, opts)
       local clangd = opts.servers.clangd
+      local lspconfig_util = require("lspconfig.util")
       clangd.root_dir = function(fname)
-        return require("lspconfig.util").root_pattern(".clangd", ".clang-tidy", ".clang-format")(fname)
-          or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(fname)
-          or require("lspconfig.util").root_pattern(
+        return lspconfig_util.root_pattern(".clangd", ".clang-tidy", ".clang-format")(fname)
+          or lspconfig_util.root_pattern("compile_commands.json", "compile_flags.txt")(fname)
+          or lspconfig_util.root_pattern(
             "Makefile",
             "configure.ac",
             "configure.in",
@@ -17,7 +18,7 @@ return {
             "meson_options.txt",
             "build.ninja"
           )(fname)
-          or require("lspconfig.util").find_git_ancestor(fname)
+          or lspconfig_util.find_git_ancestor(fname)
       end
       clangd.cmd = {
         "clangd",

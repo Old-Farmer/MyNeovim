@@ -3,7 +3,7 @@ return {
   {
     "rmagatti/goto-preview",
     event = "BufEnter",
-    config = true,
+    opts = {},
     keys = {
       {
         "<leader>pd",
@@ -209,7 +209,7 @@ return {
       },
       {
         "<leader>fO",
-       function()
+        function()
           require("oil").open_float(nil)
         end,
         desc = "Oil (Floating Buffer Parent Dir)",
