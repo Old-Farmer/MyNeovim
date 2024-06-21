@@ -1,4 +1,6 @@
 return {
+  { import = "lazyvim.plugins.extras.coding.mini-surround" },
+  { import = "lazyvim.plugins.extras.coding.luasnip" }, -- Due to the lack of native snippet functionality Use Lua snip instead now
   -- cmp & snippets
   -- disable friendly-snippets because not good
   {
