@@ -10,6 +10,11 @@ cd $HOME
 # use snap to install
 sudo snap install --beta nvim --classic # stable
 
+# lazy.nvim need this to build luarocks
+# see https://github.com/luarocks/luarocks/wiki/Installation-instructions-for-Unix
+# not very stable now for lazy.nvim to support luarocks
+sudo apt install build-essential libreadline-dev
+
 # LazyVim dependencies
 sudo apt-get install ripgrep fd-find
 
