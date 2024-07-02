@@ -5,6 +5,20 @@
 -- Disable lsp autoformat
 vim.g.autoformat = false
 
+-- -- Show fold sign when open
+-- vim.g.lazyvim_statuscolumn = {
+--   folds_open = true,
+--   folds_gihubhl = true,
+-- }
+
+-- -- Choose fzf
+-- vim.g.lazyvim_picker = "fzf"
+
+vim.g.cmp_widths = {
+  abbr = 999,
+  menu = 999,
+}
+
 local opt = vim.opt
 
 opt.guicursor =
@@ -15,8 +29,9 @@ opt.scrolloff = 8
 opt.tabstop = 4
 
 -- termdebug
-vim.g.termdebug_config = {}
-vim.g.termdebug_config.wide = 1
+vim.g.termdebug_config = {
+  wide = 1,
+}
 
 -- neovide
 if vim.g.neovide then

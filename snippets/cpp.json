@@ -7,7 +7,7 @@
         "description": "#pragma once"
     },
     "Print line in c++ style": {
-        "prefix": "prtln",
+        "prefix": "println",
         "body": "std::cout << ${1:Expression} << std::endl;",
         "description": "Print line in c++ style"
     },

@@ -160,38 +160,23 @@ return {
         end
       end,
       open_mapping = [[<c-\>]],
-      start_in_insert = true,
+      start_in_insert = false,
     },
   },
 
   -- undo visualizer
   {
-    "debugloop/telescope-undo.nvim",
-    dependencies = {
-      {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-      },
-    },
+    "mbbill/undotree",
     keys = {
       {
         "<leader>su",
-        "<cmd>Telescope undo<cr>",
+        "<cmd>UndotreeToggle<cr>",
         desc = "Undo History",
       },
     },
-    opts = {
-      extensions = {
-        undo = {
-          -- telescope-undo.nvim config, see below
-        },
-        -- no other extensions here, they can have their own spec too
-      },
-    },
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      require("telescope").load_extension("undo")
-    end,
+    config = function ()
+      vim.g.undotree_WindowLayout = 2
+    end
   },
 
   -- file explorer
