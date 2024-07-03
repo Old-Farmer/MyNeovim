@@ -56,8 +56,10 @@ return {
     optional = true,
     opts = {
       linters = {
-        markdownlint = {
-          args = { "--disable", "MD013", "--" },
+        -- ref https://github.com/LazyVim/LazyVim/discussions/2268
+        -- to config linter
+        ["markdownlint-cli2"] = {
+          args = { "--config", vim.fn.stdpath("config") .. "/configs" },
         },
       },
     },

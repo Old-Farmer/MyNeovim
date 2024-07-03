@@ -17,14 +17,14 @@ return {
   {
     "mfussenegger/nvim-dap",
     optional = true,
-    opts = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "dap-repl",
-        callback = function()
-          require("dap.ext.autocompl").attach()
-        end,
-      })
-    end,
+    -- opts = function()
+    --   vim.api.nvim_create_autocmd("FileType", {
+    --     pattern = "dap-repl",
+    --     callback = function()
+    --       require("dap.ext.autocompl").attach()
+    --     end,
+    --   })
+    -- end,
     -- stylua: ignore
     keys = {
       { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
@@ -33,5 +33,27 @@ return {
       { "<leader>dd", function() require("dap").clear_breakpoints() end, desc = "Delete Breakpoints" },
       { "<leader>dL", function() require("dap").list_breakpoints() end, desc = "List Breakpoints" },
     },
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "rcarriga/cmp-dap",
+    },
+    opts = function(_, opts)
+      require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+        sources = {
+          { name = "dap" },
+        },
+      })
+      opts.enabled = function()
+        local buftype = nil
+        if vim.api.nvim_get_option_value then
+          buftype = vim.api.nvim_get_option_value("buftype", { buf = 0 })
+        else
+          buftype = vim.api.nvim_buf_get_option(0, "buftype")
+        end
+        return buftype ~= "prompt" or require("cmp_dap").is_dap_buffer()
+      end
+    end,
   },
 }
