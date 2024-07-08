@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- Indentation for FileType
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "lua", "cmake", "markdown" },
+  pattern = { "lua", "cmake", "markdown", "sshconfig" },
   callback = function()
     my_lib.set_indentation("local", "spaces", 2)
   end,

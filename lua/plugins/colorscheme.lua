@@ -6,15 +6,6 @@ return {
       style = "night",
     },
   },
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   opts = {
-  --     dim_inactive = {
-  --       enabled = true,
-  --     },
-  --   },
-  -- },
   {
     "LazyVim/LazyVim",
     opts = {

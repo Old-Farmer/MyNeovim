@@ -5,6 +5,9 @@
 -- Disable lsp autoformat
 vim.g.autoformat = false
 
+-- use basedpyright
+vim.g.lazyvim_python_lsp = "basedpyright"
+
 -- -- Show fold sign when open
 -- vim.g.lazyvim_statuscolumn = {
 --   folds_open = true,
