@@ -3,11 +3,11 @@
 -- Add any additional autocmds here
 local my_lib = require("my_lib")
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = "*",
-  command = "setlocal iskeyword-=_",
-  desc = "set iskeyword",
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = "*",
+--   command = "setlocal iskeyword-=_",
+--   desc = "set iskeyword",
+-- })
 
 -- Indentation for FileType
 vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -27,6 +27,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.conceallevel = 0
   end,
   desc = "disable spell for markdown, and show hidden",
+})
+
+-- a way to disable auto add comment when use o or 'O'
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = { "*" },
+  callback = function()
+    vim.opt.formatoptions = vim.opt.formatoptions - "o" -- Don't continue comments with o and O
+  end,
+  desc = "Don't continue comments with o and O",
 })
 
 -- -- Terminal

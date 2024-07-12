@@ -61,16 +61,16 @@ return {
       -- Disable ghost text
       opts.experimental.ghost_text = false
 
-      -- Toggle docs view
-      opts.mapping["<C-g>"] = cmp.mapping(function()
-        if cmp.visible_docs() then
-          cmp.close_docs()
-        else
-          cmp.open_docs()
-        end
-      end, { "i", "s" })
-
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        -- Toggle docs view
+        ["<C-g>"] = cmp.mapping(function()
+          if cmp.visible_docs() then
+            cmp.close_docs()
+          else
+            cmp.open_docs()
+          end
+        end, "i"),
+        -- tab move
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
