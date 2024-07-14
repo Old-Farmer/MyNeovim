@@ -46,10 +46,16 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>p"] = { name = "+goto-preview" },
-        ["<leader><tab>"] = nil, -- as del tab maps
-        ["<leader>t"] = { name = "+terminal" },
+      spec = {
+        { "<leader>p", group = "goto-preview" },
+        { "<leader><tab>", hidden = true }, -- as del tab maps
+        { "<leader>t", group = "terminal" },
+      },
+      modes = {
+        t = false,
+      },
+      icons = {
+        rules = false, -- disable icons now because some keymaps cannot show icons automatically
       },
     },
   },
@@ -174,9 +180,9 @@ return {
         desc = "Undo History",
       },
     },
-    config = function ()
+    config = function()
       vim.g.undotree_WindowLayout = 2
-    end
+    end,
   },
 
   -- file explorer

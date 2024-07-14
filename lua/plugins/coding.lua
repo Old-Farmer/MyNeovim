@@ -11,8 +11,6 @@ return {
   -- { "garymjr/nvim-snippets", opts = { friendly_snippets = false }, enabled = false },
   {
     "L3MON4D3/LuaSnip",
-    event = "InsertEnter",
-    optional = true,
     opts = function(_, opts)
       -- Set user snippets loc, default is nvim config path
       require("luasnip.loaders.from_vscode").lazy_load()
@@ -69,7 +67,7 @@ return {
           else
             cmp.open_docs()
           end
-        end, "i"),
+        end, { "i" }),
         -- tab move
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

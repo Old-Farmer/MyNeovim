@@ -6,6 +6,7 @@ return {
       { "nvim-telescope/telescope.nvim" },
     },
     event = "VeryLazy",
+    version = "v0.5.4",
     keys = {
       {
         "<leader>mm",
@@ -34,8 +35,8 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>m"] = { name = "+book[m]ark" },
+      spec = {
+        { "<leader>m", group = "+book[m]ark" },
       },
     },
   },

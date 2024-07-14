@@ -3,7 +3,6 @@ return {
   { import = "lazyvim.plugins.extras.dap.nlua" },
   {
     "rcarriga/nvim-dap-ui",
-    optional = true,
     config = function(_, opts)
       local dap = require("dap")
       local dapui = require("dapui")
@@ -16,7 +15,6 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
-    optional = true,
     -- opts = function()
     --   vim.api.nvim_create_autocmd("FileType", {
     --     pattern = "dap-repl",
