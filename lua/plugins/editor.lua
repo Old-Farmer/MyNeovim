@@ -48,17 +48,30 @@ return {
     opts = {
       spec = {
         { "<leader>p", group = "goto-preview" },
-        { "<leader><tab>", hidden = true }, -- as del tab maps
         { "<leader>t", group = "terminal" },
       },
-      modes = {
-        t = false, -- disable in terminal mode
+      triggers = {
+        { "<auto>", mode = "nixsoc" },
       },
       icons = {
-        rules = false, -- disable icons now because some keymaps cannot show icons automatically
+        mappings = false, -- disable icons now because some keymaps cannot show icons automatically
         keys = {
-          BS = "<bs>",
-          Esc = "<esc>",
+          Up = "<Up>",
+          Down = "<Down>",
+          Left = "<Left>",
+          Right = "<Right>",
+          C = "C-",
+          M = "A-",
+          D = "D-",
+          S = "S-",
+          CR = "<Enter>",
+          Esc = "<Esc>",
+          ScrollWheelDown = "<ScrollWheelDown>",
+          ScrollWheelUp = "<ScrollWheelUp>",
+          NL = "<NL>",
+          BS = "<BS>",
+          Space = "<Space>",
+          Tab = "<Tab>",
           F1 = "<F1>",
           F2 = "<F2>",
           F3 = "<F3>",

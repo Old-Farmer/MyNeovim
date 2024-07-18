@@ -11,12 +11,8 @@ local mapdel = vim.keymap.del
 mapdel("n", "<leader>fn")
 
 -- Window
-mapdel("n", "<leader>w-")
-mapdel("n", "<leader>w|")
 mapdel("n", "<leader>-")
 mapdel("n", "<leader>|")
-map("n", "<leader>ws", "<C-W>s", { desc = "Split Window" })
-map("n", "<leader>wv", "<C-W>v", { desc = "Split Window Vertically" })
 
 -- Buffer
 mapdel("n", "<leader>`")

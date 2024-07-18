@@ -17,6 +17,7 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 -- -- Choose fzf
 -- vim.g.lazyvim_picker = "fzf"
 
+-- cmp menu witdh
 vim.g.cmp_widths = {
   abbr = 999,
   menu = 999,
@@ -28,7 +29,7 @@ opt.guicursor =
   "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait1-blinkoff600-blinkon600-Cursor/lCursor,sm:block-blinkwait1-blinkoff600-blinkon600"
 opt.shiftwidth = 4
 opt.scrolloff = 8
--- opt.shortmess:remove("I") -- Show welcome again because I diable dashboard-nvim
+-- opt.shortmess:remove("I") -- Show welcome again when diable dashboard-nvim
 opt.tabstop = 4
 
 -- termdebug
@@ -39,6 +40,7 @@ vim.g.termdebug_config = {
 -- neovide
 if vim.g.neovide then
   vim.o.guifont = "JetbrainsMono Nerd Font:h14"
+  -- vim.o.guifont = "FiraCode Nerd Font:h16"
   vim.g.neovide_transparency = 0.98
   vim.g.neovide_padding_top = 10
   vim.g.neovide_padding_right = 5

@@ -3,11 +3,11 @@
 -- Add any additional autocmds here
 local my_lib = require("my_lib")
 
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---   pattern = "*",
---   command = "setlocal iskeyword-=_",
---   desc = "set iskeyword",
--- })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = "*",
+  command = "setlocal iskeyword-=_",
+  desc = "set iskeyword",
+})
 
 -- Indentation for FileType
 vim.api.nvim_create_autocmd({ "FileType" }, {
