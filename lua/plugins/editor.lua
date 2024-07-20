@@ -51,7 +51,7 @@ return {
         { "<leader>t", group = "terminal" },
       },
       triggers = {
-        { "<auto>", mode = "nixsoc" },
+        { "<auto>", mode = "nxso" },
       },
       icons = {
         mappings = false, -- disable icons now because some keymaps cannot show icons automatically
