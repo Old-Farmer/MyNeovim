@@ -64,11 +64,6 @@ return {
       },
     },
   },
-  {
-    "lukas-reineke/headlines.nvim",
-    optional = true,
-    enabled = false,
-  },
 
   -- Rust
   -- {
