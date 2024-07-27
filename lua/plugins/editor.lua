@@ -235,4 +235,11 @@ return {
       },
     },
   },
+
+  -- indentaion detection
+  {
+    "nmac427/guess-indent.nvim",
+    event = "BufAdd",
+    opts = {},
+  },
 }

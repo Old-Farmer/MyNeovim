@@ -24,10 +24,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "markdown" },
   callback = function()
     vim.opt_local.spell = false
-    -- vim.opt_local.conceallevel = 0
+    vim.opt_local.conceallevel = 0
   end,
-  -- desc = "disable spell for markdown, and show hidden",
-  desc = "disable spell for markdown",
+  desc = "disable spell for markdown, and show hidden",
 })
 
 -- a way to disable auto add comment when use o or 'O'

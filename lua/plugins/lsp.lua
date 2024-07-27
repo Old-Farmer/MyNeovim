@@ -7,4 +7,12 @@ return {
     --   keys[#keys + 1] = { "K", false }
     -- end,
   },
+  {
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {
+      autoEnableHints = false,
+    },
+    cond = false,
+  },
 }

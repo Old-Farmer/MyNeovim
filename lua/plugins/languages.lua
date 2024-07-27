@@ -51,6 +51,10 @@ return {
   --     end, opts.ensure_installed)
   --   end,
   -- },
+  -- {
+  --   "MeanderingProgrammer/markdown.nvim",
+  --   enabled = false,
+  -- },
   {
     "mfussenegger/nvim-lint",
     optional = true,
